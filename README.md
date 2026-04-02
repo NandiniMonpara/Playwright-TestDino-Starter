@@ -146,3 +146,9 @@ npm run format
 This structure is designed to scale to larger test suites, not just a single sample test.
 
 Replace the sample tests and update `baseURL` in `playwright.config.ts` to point to your own application when you start a real project.
+
+---
+
+## License
+
+MIT
