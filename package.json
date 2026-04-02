@@ -1,0 +1,29 @@
+{
+  "name": "playwright-testdino-starter",
+  "version": "1.0.0",
+  "description": "Starter kit with Playwright, ESLint, Prettier, GitHub Actions, and TestDino reporting.",
+  "scripts": {
+    "test": "npx playwright test",
+    "lint": "eslint . --ext .js,.ts",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "playwright",
+    "testdino",
+    "starter",
+    "e2e",
+    "github-actions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@typescript-eslint/parser": "^8.58.0",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.10.1",
+    "prettier": "^3.8.1",
+    "tdpw": "^1.0.33"
+  }
+}
