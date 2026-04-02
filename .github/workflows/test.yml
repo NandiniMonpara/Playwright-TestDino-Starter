@@ -18,7 +18,6 @@ jobs:
     timeout-minutes: 30
     env:
       CI: true
-      TESTDINO_TOKEN: ${{ secrets.TESTDINO_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -71,5 +70,5 @@ jobs:
           retention-days: 7
 
       - name: Upload results to TestDino
-        if: ${{ !cancelled() && env.TESTDINO_TOKEN != '' }}
-        run: npx tdpw upload ./playwright-report --upload-html
+        if: ${{ !cancelled() }}
+        run: npx tdpw upload ./playwright-report --upload-html --token="${{ secrets.TESTDINO_TOKEN }}"
