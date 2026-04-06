@@ -164,7 +164,7 @@ npx playwright test && npx tdpw upload ./playwright-report --token="your-token"
 
 ## Get Your TestDino API Key
 
-1. Sign in to TestDino.
+1. Sign in to [TestDino](https://app.testdino.com/).
 2. Create an organization and project.
 3. Generate an API key from the project setup or settings page.
 4. Copy the key and keep it secret.
