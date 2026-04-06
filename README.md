@@ -1,6 +1,6 @@
 # Playwright-Testdino-Starter
 
-Starter kit with Playwright, ESLint, Prettier, GitHub Actions, and TestDino report upload.
+Starter kit with Playwright, TestDino reporting, and a project-scoped `testdino-hq/playwright-skill` install that helps testers generate and improve Playwright test cases.
 
 ---
 
@@ -21,10 +21,25 @@ npm install
 
 This installs all project dependencies, including Playwright and `tdpw`.
 
-If you want to install `tdpw` manually in another project:
+## TestDino TDPW Installation
+
+### Using npx (Recommended)
 
 ```sh
-npm install -D tdpw
+npx tdpw <command> --token="your-token"
+```
+
+### Global Installation
+
+```sh
+npm install -g tdpw
+tdpw <command> --token="your-token"
+```
+
+### Project Dependency
+
+```sh
+npm install --save-dev tdpw
 ```
 
 If you haven't installed browsers yet:
@@ -32,6 +47,56 @@ If you haven't installed browsers yet:
 ```sh
 npx playwright install
 ```
+
+If you want to install or refresh the TestDino Playwright skill:
+
+```sh
+npx skills add testdino-hq/playwright-skill
+```
+
+This repo already includes the skill in project scope under:
+
+```text
+.agents/skills/playwright-skill
+```
+
+The lock entry is tracked in `skills-lock.json`.
+
+---
+
+## Demo Site Under Test
+
+The sample tests in this repo target:
+
+```text
+https://storedemo.testdino.com/
+```
+
+The current sample suite covers:
+
+- homepage smoke coverage
+- catalog navigation and product listing checks
+- product detail validation for a featured item
+- cart add-to-item behavior
+
+These examples are included to show how testers can use the TestDino Playwright skill to turn manual scenarios into maintainable Playwright tests.
+
+---
+
+## How Testers Can Use This Repo
+
+1. Open this repo in your supported coding agent.
+2. Make sure the project-scoped skill is available in `.agents/skills/playwright-skill`.
+3. Ask the agent to use `playwright-skill` for the next test you want to create.
+4. Review the generated test, run it locally, and refine the scenario.
+
+Good next test ideas for testers:
+
+- verify category navigation from the homepage
+- verify wishlist behavior
+- verify quantity changes before adding to cart
+- verify the reviews or additional information tabs
+- verify buy-now behavior if checkout is available
 
 ---
 
@@ -123,6 +188,35 @@ The workflow runs Playwright tests, uploads the Playwright HTML report as an art
 
 ---
 
+## Using TestDino Playwright Skill
+
+This repository is meant to show testers how `testdino-hq/playwright-skill` can help them create stronger Playwright tests faster.
+
+The skill is useful when you want help with:
+
+- writing or refactoring Playwright tests
+- improving locators, assertions, fixtures, or page objects
+- debugging flaky tests
+- improving CI, sharding, traces, and artifacts
+
+Typical tester prompts:
+
+```text
+Use the playwright-skill to create a smoke test for storedemo.testdino.com.
+Use the playwright-skill to add a cart test for storedemo.testdino.com.
+Use the playwright-skill to improve these Playwright locators and remove flaky waits.
+Use the playwright-skill to create a product detail test using web-first assertions.
+```
+
+What the skill gives testers:
+
+- better locator strategy guidance, especially `getByRole()` and stable selectors
+- safer waiting patterns through web-first assertions instead of fixed delays
+- recommendations for structuring smoke, regression, product, and cart flows
+- patterns for scaling the suite with fixtures, page objects, debugging, and CI guidance
+
+---
+
 ## Useful Commands
 
 ```sh
@@ -139,6 +233,8 @@ npm run format
 - `tests/regression/` contains broader regression tests
 - `tests/fixtures/` is for shared Playwright fixtures
 - `tests/helpers/` is for reusable helpers and utilities
+- `.agents/skills/playwright-skill/` contains the project-scoped TestDino Playwright skill
+- `skills-lock.json` records the installed skill source
 - `playwright.config.ts` contains Playwright configuration
 - `.github/workflows/test.yml` contains the GitHub Actions workflow
 - `package.json` contains scripts and dependencies
@@ -146,6 +242,13 @@ npm run format
 This structure is designed to scale to larger test suites, not just a single sample test.
 
 Replace the sample tests and update `baseURL` in `playwright.config.ts` to point to your own application when you start a real project.
+
+---
+
+## Support
+
+- Documentation: [docs.testdino.com](https://docs.testdino.com/)
+- Email: [support@testdino.com](mailto:support@testdino.com)
 
 ---
 

@@ -4,6 +4,7 @@
   "description": "Starter kit with Playwright, ESLint, Prettier, GitHub Actions, and TestDino reporting.",
   "scripts": {
     "test": "npx playwright test",
+    "skill:add:playwright": "npx skills add testdino-hq/playwright-skill",
     "lint": "eslint . --ext .js,.ts",
     "format": "prettier --write ."
   },

@@ -10,7 +10,7 @@ export default defineConfig({
   workers: isCI ? 3 : 3,
   timeout: 30 * 1000,
   use: {
-    baseURL: 'http://example.com/',
+    baseURL: 'https://storedemo.testdino.com',
     headless: true,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
