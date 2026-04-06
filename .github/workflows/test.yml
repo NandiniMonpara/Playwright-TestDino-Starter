@@ -71,4 +71,4 @@ jobs:
 
       - name: Upload results to TestDino
         if: ${{ !cancelled() }}
-        run: npx tdpw upload ./playwright-report --upload-html --token="${{ secrets.TESTDINO_TOKEN }}"
+        run: npx tdpw upload ./playwright-report --token="${{ secrets.TESTDINO_TOKEN }}"

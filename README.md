@@ -132,32 +132,32 @@ This command:
 Then upload the report directly with your token:
 
 ```sh
-npx tdpw upload ./playwright-report --upload-html --token=YOUR_TESTDINO_TOKEN
+npx tdpw upload ./playwright-report --token="your-token"
 ```
 
 If you want to run tests first and then upload in one command:
 
 ```sh
-npx playwright test && npx tdpw upload ./playwright-report --upload-html --token=YOUR_TESTDINO_TOKEN
+npx playwright test && npx tdpw upload ./playwright-report --token="your-token"
 ```
 
 If you are using Windows `cmd`, the most reliable option is:
 
 ```bat
-npx playwright test && npx tdpw upload .\playwright-report --upload-html --token=YOUR_TESTDINO_TOKEN
+npx playwright test && npx tdpw upload .\playwright-report --token="your-token"
 ```
 
 If you are using PowerShell, the most reliable option is:
 
 ```powershell
 npx playwright test
-npx tdpw upload ./playwright-report --upload-html --token=YOUR_TESTDINO_TOKEN
+npx tdpw upload ./playwright-report --token="your-token"
 ```
 
 If you are using macOS or Linux:
 
 ```sh
-npx playwright test && npx tdpw upload ./playwright-report --upload-html --token=YOUR_TESTDINO_TOKEN
+npx playwright test && npx tdpw upload ./playwright-report --token="your-token"
 ```
 
 ---
