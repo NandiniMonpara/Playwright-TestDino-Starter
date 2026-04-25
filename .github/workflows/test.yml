@@ -90,7 +90,7 @@ jobs:
           retention-days: 7
 
   merge-reports:
-    if: ${{ !cancelled() }}
+    if: ${{ always() }}
     needs: test
     runs-on: ubuntu-latest
 
@@ -125,6 +125,8 @@ jobs:
           retention-days: 14
 
       - name: Upload results to TestDino
-        run: npx tdpw upload ./playwright-report \
-          --token="${{ secrets.TESTDINO_TOKEN }}" \
-          --serverUrl="https://stg-api.testdino.com"
+        if: ${{ !cancelled() }}
+        run: |
+          npx tdpw upload ./playwright-report \
+            --token="${{ secrets.TESTDINO_TOKEN }}" \
+            --serverUrl="https://stg-api.testdino.com"
