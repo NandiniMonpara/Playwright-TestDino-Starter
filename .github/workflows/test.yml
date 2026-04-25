@@ -125,4 +125,6 @@ jobs:
           retention-days: 14
 
       - name: Upload results to TestDino
-        run: npx tdpw upload ./playwright-report --token="${{ secrets.TESTDINO_TOKEN }}"
+        run: npx tdpw upload ./playwright-report \
+          --token="${{ secrets.TESTDINO_TOKEN }}" \
+          --serverUrl="https://stg-api.testdino.com"
